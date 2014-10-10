@@ -1,0 +1,608 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.0in]{geometry}
+
+\usepackage[T1]{fontenc}
+
+%%%
+%%%  Page Setup
+%%%
+\special{papersize=8.5in,11in}
+\setlength{\pdfpagewidth}{8.5in}
+\setlength{\pdfpageheight}{11in}
+
+%%% Figure caption declaration
+\usepackage[labelfont=bf]{caption}
+%%% Spacing
+\addtolength{\parskip}{0.5ex}
+
+
+%%%
+%%%  Lists
+%%%
+\usepackage{enumitem}
+\setlist{itemsep=0.5ex,parsep=0pt}             % more compact lists
+
+%%%
+\usepackage{fancyhdr}
+\usepackage{xspace}
+%\usepackage{enumerate}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{latexsym,amsthm,amsmath,amsfonts,amssymb,stmaryrd,mathtools}
+
+\usepackage[usenames]{color}
+\usepackage{graphicx}
+
+\usepackage{listings}
+\usepackage{wrapfig}
+
+
+%%%
+%%%  Tables
+%%%
+\usepackage{booktabs}
+%\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{supertabular}
+%%%
+
+
+\usepackage[colorlinks,
+citecolor=Sepia,
+linkcolor=Blue,
+pagebackref=true
+%pagebackref=true      turn this on and off for citation back references.
+]{hyperref}%         % for online version
+
+\usepackage{natbib}
+\usepackage{url}
+
+%\usepackage{times}
+\usepackage{txfonts}
+
+%% My stuff
+\input{mac}
+\input{local}
+\input{space-tricks}
+
+
+\newcommand{\email}[2]{\href{mailto:#2}{#1}}
+\newcommand{\pt}[1]{\noindent
+  {\color{blue}{\textbf{Point.}#1}}\smallskip}
+\newcommand{\q}[1]{\noindent {\color{red}{\textbf{Question:} #1}}\smallskip}
+
+%\date{}
+
+%\title{SHF: Small: Functional Abstractions and Languages for Dynamic Big Data}
+
+
+%%% this package has to be right before begin{doc}
+\usepackage{microtype}
+
+\title{Masters Projects}
+\author{Umut A. Acar \and Arthur Chargueraud \and Mike Rainey}
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+This document describes several projects that can lead to interesting
+research contributions and a proposed approach to conducting the
+projects.
+
+\section{Expectations and Reports.}
+
+We expect each student to complete a master's report, consisting
+probably of about 20-50 pages of text, typeset in LaTeX, that reports
+the work performed, the results obtained, and puts them all in the
+context of existing work on the topic.  Each master's report will also
+come with an implementation completed in the C++ language using the
+PASL library tools, which include a library for writing parallel
+programs, as well as related tools for evaluating their performance.
+
+
+\paragraph{24-Month Timeline}
+We suggest the following timeline for each two-year project.
+
+\begin{itemize}
+
+\item {\bf Month 1: preliminary results.}  The student will complete a
+  preliminary study of the problem and complete a 1 page report on
+  what he or she has come up with. The preliminary results could be of
+  the following nature: completing the development of an algorithm or
+  a prototype that for example, works only in the sequential case.
+
+\item {\bf Month 2: related work.}  The student will complete a review
+  of the related work and complete a 2 page report discussing the
+  related work and the limitation of the related work in relation to
+  the proposed project.  There report will include an additional 1
+  page material where the student discusses a technique or approach
+  for addressing the limitations described above.
+
+\item {\bf Month 3: results-1.}  The student will complete an initial
+  result that demonstrates that the approach can work. This can
+  consist of for example an algorithm and its implementation along
+  with analysis and empirical results that show that the proposed
+  approach works.  There will be a 2-page {\em result report}
+  describing the results and a 1/2 page in the planned extensions.
+
+\item {\bf Month 4: results-2.}  The student will build on the
+  previous results and complete a 2.5-page result report as described
+  above.
+
+\item {\bf Month 5: results-3.}  The student will build on the
+  previous results and complete a 2.5-page result report as described
+  above.
+
+\item {\bf Month 6: midterm report.}  The student will put together
+  all the reports written together into a single 10-page document and
+  wrote a one page plan about how to finish.
+
+
+\item {\bf Month 9: completion plan.}  The student will finalize all
+  results and implementation.  The code will be checked into the
+  repository.  We will then pair each student with another {\em
+    partner} student.  These students will swap their results and
+  their code and each student will check the others work.  This will
+  consist of reading the completion report and running the code and
+  repeating the reported results.
+
+\item {\bf Month 10: feedback.}  The student will write a
+  1-page report describing his results in checking the assigned
+  thesis.  The student will meet with his or her partner and give
+  verbal feedback on his findings.
+
+\item {\bf Month 11: feedback-response.}  The student will
+  write a 2-page report citing the partern's findings and come up with
+  a plan to fix the problems.
+
+\item {\bf Month 16: master's-report draft.}  The student will complete the
+  work and the master's report.
+
+\item {\bf Month 17: advisor feedback.}  DeepSea+SP team will return to
+  the students with feedback about how to proceed.
+
+\item {\bf Month 18: advisor response.} The student will write a
+  1-page report with the plan of how to complete.
+
+\item {\bf Month 22: master's code completion.} The student will
+  complete all implementation work, checking the work into the
+  repository.
+
+\item {\bf Month 24: master's report.} The student will complete the
+  master's report.
+\end{itemize}
+
+
+\paragraph{10-Month Timeline}
+We suggest the following timeline for each one-year project.
+
+\begin{itemize}
+
+\item {\bf Month 1: preliminary results.}  The student will complete a
+  preliminary study of the problem and complete a 1 page report on
+  what he or she has come up with. The preliminary results could be of
+  the following nature: completing the development of an algorithm or
+  a prototype that for example, works only in the sequential case.
+
+\item {\bf Month 2: related work.}  The student will complete a review
+  of the related work and complete a 2 page report discussing the
+  related work and the limitation of the related work in relation to
+  the proposed project.  There report will include an additional 1
+  page material where the student discusses a technique or approach
+  for addressing the limitations described above.
+
+\item {\bf Month 3: results-1.}  The student will complete an initial
+  result that demonstrates that the approach can work. This can
+  consist of for example an algorithm and its implementation along
+  with analysis and empirical results that show that the proposed
+  approach works.  There will be a 2-page {\em result report}
+  describing the results and a 1/2 page in the planned extensions.
+
+\item {\bf Month 4: results-2.}  The student will build on the
+  previous results and complete a 2.5-page result report as described
+  above.
+
+\item {\bf Month 5: results-3.}  The student will build on the
+  previous results and complete a 2.5-page result report as described
+  above.
+
+\item {\bf Month 6: midterm report.}  The student will put together
+  all the reports written together into a single 10-page document and
+  wrote a one page plan about how to finish.  DeepSea+SP team will
+  return to the students with feedback about how to proceed.  This can
+  take as much as 1 month. During this time, the students should
+  continue on the completion plan.
+
+
+\item {\bf Month 7: feedback plan.}  The student receives advisor
+  feedback and revises his plan to finish.  
+
+\item {\bf Month 8: master's report.} The student finishes, checks in
+  all code and paper sources to the repository and completes a report
+  on the work accomplished.
+
+\end{itemize}
+
+
+\subsection{Administrivia}
+
+The goal of all the projects will be to complete a report, an
+implementation, and a set of theoretical and empirical results that
+can be understood and repeated by other people.  Depending on the
+results, we will plan to publish a paper on each thesis.  This paper
+can be a short 2-4 page paper or a long 10-12 page paper.  All
+implementations will be released publicly under the Apache or GNU
+public licenses, copyrighted by the student and the DeepSea-Project
+Team (Acar, Chargueraud, Rainey).  The papers will likewise be
+co-authored by the student(s) and the DeepSea+SP Team.
+
+\textbf{DeepSea+SP} teams consist of the DeapSea project members and
+Maxim Buzdalov, the leader of the projects in SP.
+
+\subsection{Student selection}
+
+The projects are sorted in the order of their expected difficulty
+(more or less). The last three projects on distributed scheduling,
+distributed shared memory, and distributed parallel computing are
+challenging and should be assigned to students that will have at least
+2 years to work on them. Undergraduates can start on them as well and
+can write an undergraduate thesis on their initial work and then go on
+to continue working on the project for their masters.  It would be
+best for these three projects to be assigned to three students that
+have worked well together in the past, because if they can work well
+together, they can put together their work to create something really
+cool, as for example described by the last project, which can act as
+an umbrella project for this all.
+
+
+
+
+
+
+
+\subsection{Project PDP: Parallel Dynamic Programming (Andrey Vasin,
+  master/1 year)}
+
+\paragraph{Contacts via email.}
+\email{advisor: Maxim Buzdalov}{mbuzdalov@gmail.com}
+
+\email
+{student: Andrey Vasin}
+{vasinandrey2010@gmail.com}
+
+Dynamic programming algorithms typically store some intermediate
+computations in an array data structure so that they can be used to
+speed-up future computations.  They are usually described as
+sequential algorithms but appear to be good candidates for
+parallelization.  
+
+In this project, the student will develop techniques for parallelizing
+existing dynamic programming algorithms or devising new techniques
+when serial algorithms resist parallelization.  The algorithms will be
+analyzed, implemented, and evaluated.
+
+
+Some resources:
+
+\begin{itemize}
+\item Book chapter:
+\url{http://www.parallel-algorithms-book.com/chapters/dp.pdf}
+
+\item
+Raphael Reitzig's master thesis.
+\url{http://wwwagak.cs.uni-kl.de/raphael-reitzig.html}
+\end{itemize}
+
+
+
+\subsection{Project PGA: Work-Efficient and Scalable Parallel Graph
+  Algorithms (Boris Minaev and Grigory Tkachenko, bachelors/final year)}
+
+
+\paragraph{Contacts via email.}
+
+\email{advisor: Maxim Buzdalov}{mbuzdalov@gmail.com}
+
+\email
+{student 1: Boris Minaev} 
+{mb.787788@gmail.com}
+and
+\email
+{student 2: Grigory Tkachenko}
+{grtkachenko@gmail.com}
+
+Graph algorithms are fundamental to many problems.  Unfortunately,
+parallel graph algorithms that are competitive with sequential
+algorithms on 1 core (processor)---such algorithms are called {\em
+  work efficient}---and that also scale well to large numbers of cores
+are difficult to design, analyze, and implement.  We need new
+techniques in the form of parallel data structures and algorithms for
+processing graphs on modern shared memory architectures such as
+multicore computers.
+
+In recent work, we have proposed a new data structure called for graph
+traversal algorithms so that work-efficiency and scalability can be
+guaranteed~\cite{AcarChRa14gs}.  The key idea behind that work is
+to represent the {\em frontier set} in a graph traversal algorithm,
+which consist of the vertices that are about to be visited (but not
+yet visited) in such a way to allow them to be partitioned between
+multiple cores efficiently without paying undue overheads.
+
+Building on this recent, in this project, the student will develop new
+graph algorithm such as the following.  These algorithms can be found
+in an online book~\cite{AB-book}.  Some related work include Shun et
+al's recent papers in SPAA (for example on connectivity, minimum
+spanning trees).
+
+\begin{itemize}
+\item
+Parallel Bellman-Ford algorithm for shortest paths.
+
+\item
+Parallel graph contraction.
+
+\item
+Parallel graph connectivity.
+
+\item
+Parallel minimum spanning trees.
+\end{itemize}
+
+
+
+
+This project can be divided into two one of the students can work on
+graph contraction and algorithms that build on that such as MST and 
+the other student can work on graph search and shortest paths.
+
+
+
+\paragraph{Project PGA.1: Graph search and shortest paths}
+\begin{itemize}
+\item 
+\url{http://www.parallel-algorithms-book.com/chapters/graph-intro.pdf}
+
+\item 
+\url{http://www.parallel-algorithms-book.com/chapters/graph-search.pdf}
+
+\item 
+\url{http://www.parallel-algorithms-book.com/chapters/bfs.pdf}
+
+\item 
+\url{http://www.parallel-algorithms-book.com/chapters/dfs.pdf}
+\item 
+\url{http://www.parallel-algorithms-book.com/chapters/shortest-path.pdf}
+\end{itemize}
+
+\paragraph{Project PGA.2: Graph contraction and applications}
+\begin{itemize}
+\item 
+\url{http://www.parallel-algorithms-book.com/chapters/graph-contract.pdf}
+
+\item 
+\url{http://www.parallel-algorithms-book.com/chapters/mst.pdf}
+
+\item 
+\url{http://www.parallel-algorithms-book.com/chapters/graph-intro.pdf}
+\end{itemize}
+
+\paragraph{Getting started}
+The document that we had previously titled ``Serial-killer parallel
+algorithms for graph traversal'' is now titled ``Data structures and
+algorithms for robust and fast parallel graph search''. The document
+is accessible by the following link
+\url{http://gallium.inria.fr/~rainey/parallel-graph-search.pdf}.
+Please do not share this document, because the document is currently
+under under review for publication.
+
+The code that we developed for this study is now available to you as a
+git repository on github:
+\url{https://github.com/deepsea-inria/pasl/tree/pga}.  You will be
+working from a branch of PASL, our parallel runtime library.  Please
+let us know if you have trouble accessing the page and associated git
+repository. The most relevant files are in the \texttt{graph} folder.
+There you can find the frontier data structure, namely
+\texttt{frontierseg}, and the various implementations of BFS and DFS.
+
+The most relevant work for the moment is our PPoPP submission. Other
+relevant documents are referenced therein. However, we suggest that,
+for the moment, the best strategy might be to start workong on
+parallel versions of the graph algorithms mentioned above (i.e.,
+Bellman-Ford, contraction, etc.).
+
+\subsection{Project PGC: Parallel Granularity Control}
+
+\paragraph{Contacts.}
+\email{advisor: Mike Rainey}{mike.rainey@infria.fr}
+
+\email{student 1: Vitaly Aksenov}{aksenov.vitaly@gmail.com}
+\email{student 1: Anna Malova}{an.forgottenn@gmail.com}
+
+The granularity problem is a longstanding problem in the field of
+parallel programming.  At some level, every parallel computation
+spawns parallel threads.  Spawning threads imposes some cost on the
+run time of the computation.  If the sum of these costs is large,
+overheads become excessive, even to the point of negating the benefits
+of parallelism.  The challenge is to ensure that the thread-creation
+(and destruction) costs are well amortized, under the condition that
+performance overall is not harmed in the process.
+
+In our past work, we proposed a granularity-control technique called
+Oracle Scheduling.  Our study of Oracle Scheduling consists of an
+analytical evaluation and a prototype implementation that we wrote for
+the compiler and runtime of a parallel functional
+language~\cite{AcarChRa11}.  On the theoretical side, our results show
+that, under certain assumptions, we can ensure that all
+thread-creation (and destruction) costs are well amortized.  On the
+practical side, we showed that our implementation could effectively
+control granularity of several small benchmark applications.  Our
+study left a a few key questions to future work.  First, in an
+imperative parallel language, such as Cilk, what would the
+implementation of our technique look like?  Second, if implemented as
+a library, could our technique deliver good results, or are compiler
+techniques crucial?  In our original study, we considered the
+application of our technique to several kernels, such as sorting,
+sparse-matrix multiplication, etc.  Third, how would our technique
+scale to larger codes?  In summary, answers to these questions will
+improve our understanding of the limits to the generality and
+scalability of Oracle Scheduling.
+
+It seems likely that there is no silver bullet for solving the
+granularity-control problem.  Most likely, the case is that, in the
+future, programmers will need to be aware of multiple techniques with
+differing tradeoffs.  However, the research literature lacks a
+comprehensive study that identifies the relative strengths and
+weakness of the various techniques.  One notable alternative to our
+Oracle Scheduling is, for instance, that of Lazy Binary Splitting
+(LBS)~\cite{lazy-binary-splitting,JFP:8669069}.  This conference
+version of the LBS paper contains a nice survey of a number of
+granularity-control techniques.  However, the survey lacks comparison
+between the loop-based techniques and our Oracle Scheduling.  One
+component of this project is to identify the relative strengths and
+weaknesses of the techniques and to look for possibilities for
+synthesis between, say, LBS and Oracle Scheduling.
+
+In informal discussions, we already considered using such a synthesis
+to control granularity for certain types of irregular graph
+computations.  Relatedly, we considered whether we could generalize
+our Oracle scheduling to control granularity for parallel pipelined
+computations~\cite{lee2013fly}.  Each of these lines of work would
+involve generalizing our Oracle Scheduling, which is specific to
+divide-and-conquer parallel algorithms, to either parallel fixed-point
+algorithms (e.g., parallel pseudo DFS~\cite{CongKoKrLeSa08}) or to
+parallel wavefront-style (i.e., pipelined) algorithms.  Because these
+computations do not fit readily into our formal model, there are open
+questions regarding analytical bounds: can we guarantee similar
+amortized worst-case bounds for such computations?  Moreover, there
+are questions regarding implementation: what would a practical
+implementation look like?
+
+\subsection{Project  PDT: Dynamic Parallel Tree Contraction (Junfeng
+  Wu, master/1)}
+
+
+\paragraph{Contacts via email.}
+\email{advisor: Maxim Buzdalov}{mbuzdalov@gmail.com}
+
+\email{student: Junfeng Wu}{fengone7@gmail.com}.
+
+Trees are fundamental to many computational problems. When they are
+balanced, it is easy to compute various properties of trees in
+parallel.  When they are not balanced, however, such computations can
+be difficult.
+
+A well-known technique for performing tree computations in parallel is
+Miller and Reif's tree contraction algorithm.  In this project, the
+student will first develop and implement a work-efficient parallel
+algorithm for tree contraction.  The student will then extend the
+algorithm and implementation to support insertion and deletion of
+edges while updating the contraction efficiently.  Closely related
+work include some of our prior work~\cite{AcarBlHaViWo04,AcarBlVi05},
+which also provided a serial implementation that can serve as a good
+starting point for this research.
+
+The code base for prior work work include some of our prior
+work~\cite{AcarBlHaViWo04,AcarBlVi05} is publicly available on Umut's
+github site (umutacar).
+
+
+%% \subsection{Project DWS: Distributed Work Stealing}
+
+%% The work-stealing algorithm is a randomized load-balancing algorithm
+%% that has been proven to work well both in theory and in practice for
+%% scheduling fine-grained parallel programs on parallel architectures
+%% such as modern multicores.  Although work stealing will likely perform
+%% well in distributed systems, where for example, multiple multicore
+%% computers can be connected via a fast network, there has been
+%% relatively little work on understanding its strengths and weaknesses
+%% in the context of modern systems (though there has been prior work in
+%% the earlier days of computer science).  The most closely related work
+%% is probably the Cilk-NOW project from MIT from mid 90's
+%% (e.g.,~\cite{BlumofeLi97}).
+
+%% This project requires developing a work-stealing algorithms that would
+%% work well on modern distributed systems (for example, multiple
+%% multicores connected with a network), proving some of its properties,
+%% implementing it and making it work well.
+
+%% The project can be staged into several pieces as follows.
+%% \begin{itemize}
+%% \item Develop a flat algorithm that does not distinguish between local
+%%   and non-local processors.
+%% \item Implement the algorithm on a multicore computer (initial
+%%   implementation)
+%% \item Extend the algorithm to distinguish between local and non-local
+%%   processors.
+%% \item Implement the algorithm on a multicore computer.
+%% \item Implement the algorithm for a distributed system.
+%% \item Evaluate in theory and in practice.
+%% \item Refine the algorithm and its implementation as needed (optimize).
+
+%% \end{itemize}
+
+%% \subsection{Project DSM: Distributed Shared Memory}
+
+%% Distributed shared memory refers to an abstraction that provides a
+%% shared memory view of the world on a disjoint set of computers
+%% connected via a fast network (distributed system).  An efficient
+%% distributed shared memory system can greatly simplify writing programs
+%% that perform large parallel computations by offering a unified view of
+%% memory to the programmer.  Although the need for such systems are
+%% expected to increase, there is relatively little provably and
+%% practically efficient distributed shared memory abstractions and
+%% implementations.
+
+%% This project requires developing a distributed shared memory
+%% abstraction suitable primarily for parallel fork-join programs.  The
+%% key idea is to match the structure of the memory to that of the
+%% computation by proposing a hierarchial view of memory, where each
+%% thread executing in parallel ``checks out'' versions of the data that
+%% it needs from the main memory by making a copy, modifies them locally,
+%% and checks them back into the main memory, in a way that is similar to
+%% DAG-consistent distributed shared memory~\cite{BFJLR96}.
+
+%% The project can be staged into several pieces as follows.
+%% \begin{itemize}
+%% \item Develop a flat algorithm that does not distinguish between local
+%%   and non-local processors but implements local per parallel
+%%   ``thread'' memory.
+%% \item Implement the algorithm on a multicore computer (initial
+%%   implementation)
+%% \item Extend the algorithm to distinguish between local and non-local
+%%   processors.
+%% \item Implement the algorithm on a multicore computer.
+%% \item Implement the algorithm for a distributed system.
+%% \item Evaluate in theory and in practice.
+%% \item Refine the algorithm and its implementation as needed (optimize).
+%% \end{itemize}
+
+%% \subsection{Project DPC: Distributed Parallel Computing}
+%% This project is tightly integrated with the prior two projects.  The
+%% goal is to enable writing distributed parallel programs at a high
+%% level that use the distributed memory and schedulers implemented in
+%% separate projects to execute on multiple multicore computers connected
+%% via a network efficiently and reliably.  The key research component
+%% will be development of techniques for recovering from failures.  For
+%% example, when one of the machines fail, the system should be able to
+%% detect the failure take corrective action. This project also involves
+%% working closely with the other two projects to make sure that they can
+%% be put together in a way so that they both work well together.
+
+
+
+{%\def\bibfont{\fontsize{9pt}{10pt}\selectfont}
+%\def\bibfont{\fontsize{8pt}{9pt}\selectfont}
+%\renewcommand{\baselinestretch}{0.95}
+\setlength{\bibsep}{1pt}
+% \bibliographystyle{plainnat}  % author-year citations, longer bibliography
+% \bibliographystyle{abbrvnat}  % author-year citations,  shorter bibliography (author initials only)
+ \bibliographystyle{plain}   % numeric
+\bibliography{biblio}
+}
+
+
+\end{document}
